@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- style  -->
+  <link rel="stylesheet" href="./asesst/style.css" />
+  <!-- icons -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <title>Mawjood - Home</title>
+</head>
+
+<body>
+  <!-- header  -->
+  <header class="bg-gradient-to-tr from-red-500 via-pink-400 to-blue-500 py-20 px-6">
+    <!-- nav  -->
+    <nav aria-label="Global"
+      class="mx-auto flex items-center justify-between p-6 lg:px-8 fixed top-0 left-0 right-0 z-50 bg-white">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <h1 class="flex items-center text-red-600 text-2xl font-bold">
+            <i class="ri-shopping-cart-2-line mr-2 text-3xl"></i>Mawjood
+          </h1>
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" command="show-modal" commandfor="mobile-menu"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+            aria-hidden="true" class="size-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+      <!-- links -->
+      <el-popover-group class="hidden lg:flex lg:gap-x-12">
+        <div class="relative products">
+          <button popovertarget="desktop-menu-product"
+            class="flex items-center gap-x-1 text-sm/6 text-[#3b82f6] text-xl">
+            Product
+            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+              class="size-5 flex-none text-gray-400">
+              <path
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                clip-rule="evenodd" fill-rule="evenodd" />
+            </svg>
+          </button>
+          <!-- drop down  -->
+          <div class="absolute left-0 mt-2 hidden w-40 bg-white rounded-md shadow-lg z-50 dropdown">
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">beauty</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">fragrances</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">furniture</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">groceries</a>
+          </div>
+        </div>
+
+        <a href="#" class="text-xl text-[#3b82f6]">Home</a>
+        <a href="#" class="text-xl text-[#3b82f6]">Profile</a>
+      </el-popover-group>
+      
+      <!-- Updated auth buttons -->
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end lg:items-center">
+        <a href="#" data-action="login"
+          class="text-sm font-bold text-white bg-[#3b82f6] border border-[#38bdf8] px-4 py-2 rounded-md hover:bg-[#0ea5e9] transition">
+          Log in
+        </a>
+
+        <a href="#" data-action="signup"
+          class="ml-3 text-sm font-bold text-white bg-[#3b82f6] border border-[#38bdf8] px-4 py-2 rounded-md hover:bg-[#0ea5e9] transition">
+          Sign Up
+        </a>
+
+        <div class="user-menu hidden ml-3"></div>
+      </div>
+    </nav>
+    
+    <!-- for small screens -->
+    <el-dialog>
+      <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+        <div tabindex="0" class="fixed inset-0 focus:outline-none">
+          <el-dialog-panel
+            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+            <div class="flex items-center justify-between">
+              <button type="button" command="close" commandfor="mobile-menu"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                <span class="sr-only">Close menu</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                  aria-hidden="true" class="size-6">
+                  <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <div class="-mx-3">
+                    <button type="button" command="--toggle" commandfor="products"
+                      class="flex w-full items-center justify-between rounded-lg py-2 pr-3.5 pl-3 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">
+                      Product
+                      <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true"
+                        class="size-5 flex-none in-aria-expanded:rotate-180">
+                        <path
+                          d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                          clip-rule="evenodd" fill-rule="evenodd" />
+                      </svg>
+                    </button>
+                    <el-disclosure id="products" hidden class="mt-2 block space-y-2">
+                      <a href="#"
+                        class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">beauty</a>
+                      <a href="#"
+                        class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">fragrances</a>
+                      <a href="#"
+                        class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">furniture</a>
+                      <a href="#"
+                        class="block rounded-lg py-2 pr-3 pl-6 text-sm/7 font-semibold text-gray-900 hover:bg-gray-50">groceries</a>
+                    </el-disclosure>
+                  </div>
+                  <a href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Home</a>
+                  <a href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50">Profile</a>
+                </div>
+                <div class="py-6">
+                  <a href="#" data-action="login"
+                    class="text-sm font-bold text-white bg-[#3b82f6] border border-[#38bdf8] px-4 py-2 rounded-md hover:bg-[#0ea5e9] transition mr-2">
+                    Log In
+                  </a>
+                  <a href="#" data-action="signup"
+                    class="text-sm font-bold text-white bg-[#3b82f6] border border-[#38bdf8] px-4 py-2 rounded-md hover:bg-[#0ea5e9] transition">
+                    Sign Up
+                  </a>
+                  <div class="user-menu-mobile hidden mt-4"></div>
+                </div>
+              </div>
+            </div>
+          </el-dialog-panel>
+        </div>
+      </dialog>
+    </el-dialog>
+    <!-- nav  -->
+    <!-- hero  -->
+    <section class="py-20 px-6">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-10 fade-in-left">
+        <!-- Left: Text Content -->
+        <div class="text-white  ">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            Discover Everything in One Place
+          </h1>
+          <p class="text-lg mb-6 font-medium">
+            From electronics and skincare to home decoration – explore
+            top-quality products with unbeatable prices.
+          </p>
+          <a href="#features"
+            class="inline-block bg-white text-red-600 font-semibold px-6 py-3 rounded-full hover:bg-gray-100 transition">
+            Shop Now
+          </a>
+        </div>
+        <!-- Right: Hero Image -->
+        <div class="flex justify-center">
+          <img src="./asesst/images/Online shopping-cuate.png" alt="Shopping Illustration"
+            class="w-full max-w-md rounded-lg drop-shadow-lg" />
+        </div>
+      </div>
+    </section>
+  </header>
+  <!-- end of header  -->
+  
+  <!-- features  -->
+  <section id="features">
+    <div class="max-w-7xl mx-auto px-6 py-20">
+      <h2 class="text-3xl font-bold text-center mb-10">Why Choose Us?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="feature-item text-center">
+          <i class="ri-price-tag-3-line text-4xl text-red-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Affordable Prices</h3>
+          <p>We offer the best prices on a wide range of products.</p>
+        </div>
+        <div class="feature-item text-center">
+          <i class="ri-truck-line text-4xl text-red-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Fast Delivery</h3>
+          <p>Get your orders delivered quickly and efficiently.</p>
+        </div>
+        <div class="feature-item text-center">
+          <i class="ri-customer-service-2-line text-4xl text-red-600 mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">24/7 Support</h3>
+          <p>Our customer service is here to help you anytime.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- auto-scrolling horizontal card -->
+  <h2 class="text-center text-[#DC2626] text-2xl sm:text-4xl md:text-5xl">
+    Explore Our Collection
+  </h2>
+  <div class="overflow-hidden scroller w-full bg-white py-6 mb-10">
+    <div id="scrollRow" class="flex gap-4 scrolling">
+      <!-- JavaScript will populate this with scrolling cards -->
+    </div>
+  </div>
+  
+  <!--  cards  -->
+  <section class="max-w-7xl mx-auto px-6 py-12">
+    <h2 class="text-center text-[#DC2626] text-2xl sm:text-4xl md:text-5xl">Featured Products</h2>
+    <div id="cardsContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <!-- JavaScript will populate this with product cards -->
+    </div>
+  </section>
+  
+  <!-- footer  -->
+  <footer class="bg-gray-100 text-gray-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <h2 class="text-2xl font-bold text-[#DC2626] mb-4">Mawjood</h2>
+        <p class="text-sm text-gray-600">
+          Quality products at the best prices. We bring you the latest trends
+          and reliable service.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-[#DC2626]">Home</a></li>
+          <li><a href="#" class="hover:text-[#DC2626]">Shop</a></li>
+          <li><a href="#" class="hover:text-[#DC2626]">About Us</a></li>
+          <li><a href="#" class="hover:text-[#DC2626]">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Customer Service</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-[#DC2626]">FAQs</a></li>
+          <li><a href="#" class="hover:text-[#DC2626]">Returns</a></li>
+          <li><a href="#" class="hover:text-[#DC2626]">Shipping</a></li>
+          <li>
+            <a href="#" class="hover:text-[#DC2626]">Terms & Conditions</a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+        <p class="text-sm text-gray-600 mb-4">
+          Subscribe to get the latest updates and offers.
+        </p>
+        <form class="flex">
+          <input type="email" placeholder="Enter your email"
+            class="w-full px-3 py-2 text-sm border border-gray-300 rounded-l-lg focus:outline-none" />
+          <button type="submit" class="bg-[#DC2626] text-white px-4 py-2 rounded-r-lg hover:bg-red-700">
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-300 py-4 text-center text-sm text-gray-500">
+      © 2025 Mawjood. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Authentication Modal -->
+  <div id="authModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-[100]">
+    <div class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-lg p-6 w-full max-w-md mx-4">
+      
+      <!-- Login Form -->
+      <div id="loginForm" class="auth-form">
+        <div class="text-center mb-6">
+          <i class="ri-user-line text-4xl text-red-600 mb-2"></i>
+          <h2 class="text-2xl font-bold text-gray-800">Welcome Back!</h2>
+          <p class="text-gray-600">Sign in to your account</p>
+        </div>
+        
+        <form id="loginFormElement">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <input type="email" name="email" required 
+                   placeholder="Enter your email" 
+                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+          </div>
+          
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <input type="password" name="password" required 
+                   placeholder="Enter your password" 
+                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+          </div>
+          
+          <button type="submit" 
+                  class="w-full bg-red-600 text-white p-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 mb-4">
+            <i class="ri-login-circle-line mr-2"></i>Login
+          </button>
+        </form>
+        
+        <div class="text-center">
+          <p class="text-gray-600">
+            Don't have an account? 
+            <button id="showSignup" class="text-red-600 font-semibold hover:text-red-700 transition">
+              Sign Up
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signupForm" class="auth-form hidden">
+        <div class="text-center mb-6">
+          <i class="ri-user-add-line text-4xl text-red-600 mb-2"></i>
+          <h2 class="text-2xl font-bold text-gray-800">Create Account</h2>
+          <p class="text-gray-600">Join us today!</p>
+        </div>
+        
+        <form id="signupFormElement">
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+            <input type="text" name="name" required 
+                   placeholder="Enter your full name" 
+                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+            <input type="email" name="email" required 
+                   placeholder="Enter your email" 
+                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+          </div>
+          
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+            <input type="password" name="password" required 
+                   placeholder="Enter your password" 
+                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+          </div>
+          
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Confirm Password</label>
+            <input type="password" name="confirmPassword" required 
+                   placeholder="Confirm your password" 
+                   class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent">
+          </div>
+          
+          <button type="submit" 
+                  class="w-full bg-red-600 text-white p-3 rounded-lg font-semibold hover:bg-red-700 transition duration-300 mb-4">
+            <i class="ri-user-add-line mr-2"></i>Create Account
+          </button>
+        </form>
+        
+        <div class="text-center">
+          <p class="text-gray-600">
+            Already have an account? 
+            <button id="showLogin" class="text-red-600 font-semibold hover:text-red-700 transition">
+              Login
+            </button>
+          </p>
+        </div>
+      </div>
+
+      <!-- Close Button -->
+      <button id="closeAuth" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+        <i class="ri-close-line text-2xl"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Success/Error Messages Container -->
+  <div id="messageContainer" class="fixed top-4 right-4 z-[110] space-y-2"></div>
+
+  <!-- Demo User Info (Remove in production) -->
+  <div class="fixed bottom-4 right-4 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-lg z-[90] max-w-sm hidden" id="demoInfo">
+    <div class="flex">
+      <div class="flex-shrink-0">
+        <i class="ri-information-line text-blue-400 text-xl"></i>
+      </div>
+      <div class="ml-3">
+        <p class="text-sm font-medium">Demo Credentials</p>
+        <p class="text-xs mt-1">
+          <strong>Email:</strong> user@example.com<br>
+          <strong>Password:</strong> password
+        </p>
+        <button onclick="this.parentElement.parentElement.parentElement.remove()" 
+                class="mt-2 text-xs text-blue-600 hover:text-blue-800 underline">
+          Hide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
+            
